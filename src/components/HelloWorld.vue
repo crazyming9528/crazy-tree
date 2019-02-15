@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <p>第一次使用 vue cli 3.0,还不是很清楚新增的功能,目前一直在做angular项目,好久没写vue了,熬夜写的,样式就先这样吧, 白天工作忙 没太多时间,见谅,这个树形我是使用递归组件的方式实现的,欢迎提出意见,有更好的实现方式 也希望能交流交流,Thanks!</p>
+    <p>vue cli 3.0</p>
     <!--<p>-->
       <!--For a guide and recipes on how to configure / customize this project,<br>-->
       <!--check out the-->

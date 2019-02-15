@@ -4,6 +4,8 @@
       <img alt="Vue logo" src="./assets/logo.png">
       <HelloWorld msg="Crazyming Tree Demo"/>
     </div>
+
+    <button style="width: 180px;height: 50px;margin-bottom: 20px" @click="addNewBuilding()">添加 新的 楼宇/区域</button>
     <Tree :listData="listData" ></Tree>
   </div>
 </template>
@@ -21,143 +23,94 @@ export default {
   },
   data(){
     return{
-      listData:[
+      listData: [
         {
-          title:"食品生鲜",
-          expansion:true,
-          type:'primary',
-          child:[
+          title: "本校区",
+          expansion: true,
+          type: 'primary',
+          child: [
             {
-              title:"新鲜水果",
-              expansion:true,
-              child:[
-                {
-                  title:"阿克苏苹果",
-                  expansion:true,
-                  child:[
-                    {
-                      title:"阿克苏的红富士",
-                      expansion:false,
-                      child:[],
-                    },
-                    {
-                      title:"阿克苏的大苹果  (还能展开  点击展开 再次点击 收起)",
-                      expansion:false,
-                      child:[
-                        {
-                          title:"依托数据  无限级 树形   数据有多少层 就能show多少层",
-                          expansion:false,
-                          child:[],
-                        },
-
-                      ]
-                    },
-                  ]
-                },
-                {
-                  title:"吐鲁番葡萄",
-                  expansion:false,
-                  child:[],
-                },
-                {
-                  title:"库尔勒香梨",
-                  expansion:false,
-                  child:[],
-                },
-              ]
+              title: "行政楼",
+              child: [],
             },
             {
-              title:"蔬菜蛋品",
-              expansion:false,
-              child:[
+              title: "男生宿舍",
+              expansion: true,
+              child: [
                 {
-                  title:"土豆",
-                  expansion:false,
-                  child:[],
+                  title: "男生宿舍1栋",
+                  child: [],
                 },
                 {
-                  title:"萝卜",
-                  expansion:false,
-                  child:[],
+                  title: "男生宿舍2栋",
+                  child: [],
                 },
                 {
-                  title:"菠菜",
-                  expansion:false,
-                  child:[],
+                  title: "男生宿舍3栋",
+                  child: [],
                 },
                 {
-                  title:"鸡蛋",
-                  expansion:false,
-                  child:[],
-                },
-              ]
-            },
-            {
-              title:"河鲜海鲜",
-              expansion:false,
-              child:[],
-            },
-
-          ]
-        },
-        {
-          title:"日用百货",
-          expansion:false,
-          type:'primary',
-          child:[
-            {
-              title:"床上用品",
-              expansion:false,
-              child:[
-                {
-                  title:"被子",
-                  expansion:false,
-                  child:[],
-                },
-                {
-                  title:"枕头",
-                  expansion:false,
-                  child:[],
+                  title: "男生宿舍4栋",
+                  child: [],
                 },
               ],
             },
             {
-              title:"厨房用品",
-              expansion:false,
-              child:[],
+              title: "女生宿舍",
+              child: [],
             },
             {
-              title:"洗浴用品",
-              expansion:false,
-              child:[],
+              title: "体育馆",
+              child: [],
             },
-
-          ]
+            {
+              title: "图书馆",
+              child: [],
+            },
+            {
+              title: "1号食堂",
+              child: [],
+            },
+            {
+              title: "2号食堂",
+              child: [],
+            }
+          ],
         },
         {
-          title:"菜单三",
-          expansion:false,
-          type:'primary',
-          child:[
+          title: "2校区",
+          expansion: true,
+          type: 'primary',
+          child: [
             {
-              title:"菜单222222222",
-              expansion:false,
-              child:[],
+              title: "体育馆",
+              child: [],
             },
             {
-              title:"菜单222222222",
-              expansion:false,
-              child:[],
+              title: "图书馆",
+              child: [],
             },
             {
-              title:"菜单222222222",
-              expansion:false,
-              child:[],
+              title: "1号食堂",
+              child: [],
             },
-
-          ]
+          ],
         }
       ]
+    }
+  },methods:{
+    addNewBuilding() {
+      this.listData.forEach((item)=>{
+        item.expansion = false;
+      });
+      setTimeout(()=>{
+        this.listData.push({
+          title: "未命名",
+          expansion: true,
+          type: 'primary',
+          child: [],
+        })
+      },800);
     }
   }
 }
